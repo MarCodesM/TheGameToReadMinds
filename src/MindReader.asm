@@ -7,8 +7,8 @@ maxRandLen:	.word	6
 	.data
 	myLabel:	.asciiz	%str
 	.text
-	li $v0, 4
-	la $a0, myLabel
+	li 		$v0, 4
+	la 		$a0, myLabel
 	syscall
 .end_macro 
 
@@ -22,10 +22,10 @@ maxRandLen:	.word	6
 # gets random number (I am not sure this works yet lol)
 .macro get_rand_num(%gen, %register, %max)
 	li		$a0, %gen
-	move	$a1, %max
+	move		$a1, %max
 	li		$v0, 42
 	syscall
-	move	%register, $a0
+	move		%register, $a0
 .end_macro
 
 
